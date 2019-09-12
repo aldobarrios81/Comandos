@@ -1,0 +1,47 @@
+show dbs
+db
+cls
+show collection
+show users
+show profile
+use "base de datos"
+db.producto.insert(("name": "Laptop"))
+use "nombrededatabase"
+db.dropDatabase()
+db.productos.find().pretty()
+db.createCollection("nombre de la coleccion")
+db.productos.find("nombre": "teclado")
+db.productos.findOne({"tags": "computer"},{ "name":1} )
+db.productos.find().limit(2)
+db.productos.count()
+db.productos.find().forEach(productos => print("Producto Name: " + productos.name))
+db.productos.update({"name": "laptop"}, {$set: {"description": "lg gran laptop"} })
+db.productos.update({"name": "memoria"},{$set: {"description": "memoria ram"}}, {upsert:true})
+db.productos.update({"name": "monitor"}, {$inc: {"quantity": 1}})
+db.productos.update({"name": "monitor"}, {$rename: {"name": "nombre"}})
+db.productos.insert({
+    "nombre": "teclado",
+    "precio": 34.4,
+    "active": false,
+    "created": new Date("20/02/2019"),
+    "somedata": [1,"a",[]],
+    "facturer": {
+        "name": "dell",
+        "verion": "xps"
+                }   
+})
+
+
+db.productos.insert([{
+    "name": "mouse",
+    "description": "razer",
+    "tags": ["computer", "gamers"],
+    "quantity": 12
+},{
+    "name": "monitor",
+    "description": "lg",
+    "tags": ["computer", "gamers"],
+    "quantity": 14
+}])
+
+
