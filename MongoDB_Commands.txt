@@ -19,6 +19,8 @@ db.productos.update({"name": "laptop"}, {$set: {"description": "lg gran laptop"}
 db.productos.update({"name": "memoria"},{$set: {"description": "memoria ram"}}, {upsert:true})
 db.productos.update({"name": "monitor"}, {$inc: {"quantity": 1}})
 db.productos.update({"name": "monitor"}, {$rename: {"name": "nombre"}})
+db.productos.remove({"nombre": "monitor"})
+db.productos.remove({})
 db.productos.insert({
     "nombre": "teclado",
     "precio": 34.4,
