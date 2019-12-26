@@ -5,3 +5,10 @@ ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Tamaño (MB)"
 FROM information_schema.TABLES
 GROUP BY table_schema;
 
+#####Calcular el Tamaño de tabla de base de datos######
+
+SELECT table_name AS "Tabla",
+ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Tamaño (MB)"
+FROM information_schema.TABLES
+WHERE table_schema = "base_de_datos"
+ORDER BY (data_length + index_length) DESC;
