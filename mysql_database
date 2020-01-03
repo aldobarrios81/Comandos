@@ -12,3 +12,8 @@ ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Tamaño (MB)"
 FROM information_schema.TABLES
 WHERE table_schema = "base_de_datos"
 ORDER BY (data_length + index_length) DESC;
+
+#####TIPO DE DATOS EN TABLAS##########
+SELECT table_schema, table_name, engine
+FROM information_schema.tables
+order by table_schema,table_name,engine;
