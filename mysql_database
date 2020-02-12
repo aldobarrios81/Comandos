@@ -17,3 +17,9 @@ ORDER BY (data_length + index_length) DESC;
 SELECT table_schema, table_name, engine
 FROM information_schema.tables
 order by table_schema,table_name,engine;
+
+Cambiar contraseña a usario
+ALTER USER 'user-name'@'localhost' IDENTIFIED BY 'nueva contraseña';FLUSH PRIVILEGES;
+
+Crear usuario
+CREATE USER 'newuser'@'localhost'; GRANT ALL ON *.* to newuser@'%' IDENTIFIED BY 'test';
