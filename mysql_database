@@ -27,3 +27,5 @@ CREATE USER 'newuser'@'localhost'; GRANT ALL ON *.* to newuser@'%' IDENTIFIED BY
 Exportar a File
 select * from reportes LIMIT 5  INTO OUTFILE  '/media/data2/EtlScritp/tbl_reportes_1.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 
+Ver sesiones activas
+show status like 'Threads%';
