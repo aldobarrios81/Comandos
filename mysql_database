@@ -29,3 +29,18 @@ select * from reportes LIMIT 5  INTO OUTFILE  '/media/data2/EtlScritp/tbl_report
 
 Ver sesiones activas
 show status like 'Threads%';
+
+
+select 
+    count(*),
+    max(ReId) as max,
+    min(ReId) as min,
+    month(ReServerDatetime) as mes 
+from 
+    reportes 
+where 
+    ReEmpresa=953 
+and 
+    reId>=2128853572 
+group by 
+    month(ReServerDatetime) ;
